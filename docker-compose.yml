@@ -39,11 +39,9 @@ services:
       --http-address 0.0.0.0
       --http-allow-origin "*"
       --metrics
-      --jwt-secrets="/root/.jwt/jwtsecret"
-      --eth1-endpoints http://geth:8545 \
-      --execution-endpoints http://geth:8551 \
+      --execution-jwt /root/.jwt/jwtsecret
+      --execution-endpoint http://geth:8551 \
       --checkpoint-sync-url https://holesky.checkpoint.sigp.io
-      --builder http://geth:18550 \
       --datadir /root/.lighthouse
     ports:
       - "5052:5052"
