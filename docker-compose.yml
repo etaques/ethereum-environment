@@ -25,6 +25,7 @@ services:
   lighthouse:
     image: sigp/lighthouse:latest
     container_name: lighthouse
+    entrypoint: "/usr/local/bin/lighthouse"
     command: >
       beacon_node
       --network holesky
