@@ -39,6 +39,7 @@ services:
       --metrics
       --jwt-secrets="/root/.jwt/jwtsecret"
       --execution-endpoint http://geth:8545
+      --checkpoint-sync-url https://beaconstate-holesky.chainsafe.io
       --datadir /root/.lighthouse
     ports:
       - "5052:5052"
