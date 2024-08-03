@@ -26,6 +26,7 @@ services:
     image: sigp/lighthouse:latest
     container_name: lighthouse
     command: [
+      "bn",
       "--network=holesky",
       "--http",
       "--http-address", "0.0.0.0",
