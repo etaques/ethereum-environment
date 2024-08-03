@@ -12,11 +12,11 @@ services:
       --http.api=engine,eth,web3,net,debug
       --ws
       --ws.api=engine,eth,web3,net,debug
-      --http.corsdomain=*
+      --http.corsdomain "*"
       --holesky
       --syncmode=full
       --metrics
-      --authrpc.jwtsecret=/root/.jwt/jwtsecret
+      --authrpc.jwtsecret="/root/.jwt/jwtsecret"
     ports:
       - "8545:8545"
       - "30303:30303"
@@ -37,7 +37,7 @@ services:
       --http-address 0.0.0.0
       --http-allow-origin "*"
       --metrics
-      --jwt-secrets="/root/.jwt/jwtsecret
+      --jwt-secrets="/root/.jwt/jwtsecret"
       --execution-endpoint http://geth:8545
       --datadir /root/.lighthouse
     ports:
