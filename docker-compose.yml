@@ -1,17 +1,43 @@
 version: '3.7'
 
 services:
-  ethereum-node:
+  geth:
     image: ethereum/client-go:stable
+<<<<<<< HEAD
     container_name: ethereum-node
     command: ["--syncmode", "full", "--testnet", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.api", "eth,net,web3", "--metrics"]
+=======
+    container_name: geth
+    command: [
+      "--http", "--http.addr=0.0.0.0", "--http.port=8545", "--http.api=eth,net,web3",
+      "--syncmode=full", "--metrics"
+    ]
+>>>>>>> 24a393dc5ae793be0ad75764dc2659fb0b421623
     ports:
       - "8545:8545"
       - "30303:30303"
     volumes:
-      - ./ethereum/data:/root/.ethereum
+      - ./geth/data:/root/.ethereum
     networks:
       - eth-net
+
+  lighthouse:
+    image: sigp/lighthouse:latest
+    container_name: lighthouse
+    command: [
+      "--network", "holesky",
+      "--execution-endpoint", "http://geth:8545",
+      "--http", "--http-address", "0.0.0.0",
+      "--metrics"
+    ]
+    ports:
+      - "5052:5052"
+    volumes:
+      - ./lighthouse/data:/root/.lighthouse
+    networks:
+      - eth-net
+    depends_on:
+      - geth
 
   prometheus:
     image: prom/prometheus:latest
