@@ -9,17 +9,35 @@ services:
       --http.addr=0.0.0.0
       --http.port=8545
       --http
-      --http.api=engine,eth,web3,net,debug
+      --http.api=engine,eth,web3,txpool,net,debug
+      --http.corsdomain="*"
+      --http.vhosts="*"
       --ws
+      --ws.addr=0.0.0.0
+      --ws.port=8546
       --ws.api=engine,eth,web3,txpool,net,debug
-      --http.corsdomain "*"
+      --ws.origins='*'
       --holesky
-      --syncmode=full
+      --syncmode=snap
       --metrics
+      --metrics.addr=0.0.0.0
+      --metrics.port=8300
+      --authrpc.addr=0.0.0.0
+      --authrpc.port=8551
+      --authrpc.vhosts="*"
       --authrpc.jwtsecret="/root/.jwt/jwtsecret"
+      --verbosity=3
+      --nousb
+      --graphql
+      --graphql.corsdomain='*'
+      --graphql.vhosts='*'
     ports:
       - "8545:8545"
+      - "8546:8546"
+      - "8551:8551"
       - "30303:30303"
+      - "30303:30303/udp"
+      - "8300:8300"
     volumes:
       - ./geth/data:/root/.ethereum
       - ./geth/jwt:/root/.jwt
@@ -35,14 +53,19 @@ services:
       --network holesky
       --http
       --http-address 0.0.0.0
+      --http-port 5052
       --http-allow-origin "*"
       --metrics
+      --metrics-address 0.0.0.0
+      --metrics-port 5053
       --execution-jwt /root/.jwt/jwtsecret
-      --execution-endpoint http://geth:8545
+      --execution-endpoint http://geth:8551
       --checkpoint-sync-url https://holesky.checkpoint.sigp.io
       --datadir /root/.lighthouse
+      --disable-deposit-contract-sync
     ports:
-      - "5052:5052"
+      - "5052:5052" # http rpc
+      - "5053:5053" # metrics
       - "9007:9000/tcp"
       - "9007:9000/udp"
       - "9001:9001/udp"
