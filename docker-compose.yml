@@ -20,10 +20,14 @@ services:
     image: sigp/lighthouse:latest
     container_name: lighthouse
     command: [
+      "beacon_node",
       "--network", "holesky",
+      "--http",
+      "--http-address", "0.0.0.0",
+      "--http-allow-origin", "*",
+      "--metrics",
       "--execution-endpoint", "http://geth:8545",
-      "--http", "--http-address", "0.0.0.0",
-      "--metrics"
+      "--datadir", "/root/.lighthouse"
     ]
     ports:
       - "5052:5052"
