@@ -9,7 +9,7 @@ services:
       "--http.port=8545",
       "--http", "--http.api=engine,eth,web3,net,debug",
       "--ws", "--ws.api=engine,eth,web3,net,debug",
-      "--http.corsdomain *",
+      "--http.corsdomain", "*",
       "--holesky",
       "--syncmode=full",
       "--metrics"
