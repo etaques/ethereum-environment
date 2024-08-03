@@ -49,7 +49,7 @@ services:
     container_name: lighthouse
     entrypoint: "/usr/local/bin/lighthouse"
     command: >
-      beacon_node
+      beacon
       --network holesky
       --http
       --http-address 0.0.0.0
