@@ -5,17 +5,18 @@ services:
   geth:
     image: ethereum/client-go:stable
     container_name: geth
-    command: [
-      "--http.addr=0.0.0.0",
-      "--http.port=8545",
-      "--http", "--http.api=engine,eth,web3,net,debug",
-      "--ws", "--ws.api=engine,eth,web3,net,debug",
-      "--http.corsdomain", "*",
-      "--holesky",
-      "--syncmode=full",
-      "--metrics",
-      "--authrpc.jwtsecret=/root/.jwt/jwtsecret"
-    ]
+    command: >
+      --http.addr=0.0.0.0
+      --http.port=8545
+      --http
+      --http.api=engine,eth,web3,net,debug
+      --ws
+      --ws.api=engine,eth,web3,net,debug
+      --http.corsdomain=*
+      --holesky
+      --syncmode=full
+      --metrics
+      --authrpc.jwtsecret=/root/.jwt/jwtsecret
     ports:
       - "8545:8545"
       - "30303:30303"
