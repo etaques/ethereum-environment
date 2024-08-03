@@ -64,6 +64,7 @@ services:
       --checkpoint-sync-url https://holesky.checkpoint.sigp.io
       --datadir /root/.lighthouse
       --disable-deposit-contract-sync
+      --purge-db
     ports:
       - "5052:5052" # http rpc
       - "5053:5053" # metrics
