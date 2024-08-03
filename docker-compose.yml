@@ -40,6 +40,7 @@ services:
       --jwt-secrets="/root/.jwt/jwtsecret"
       --execution-endpoint http://geth:8545
       --datadir /root/.lighthouse
+      --allow-insecure-genesis-sync
     ports:
       - "5052:5052"
     volumes:
