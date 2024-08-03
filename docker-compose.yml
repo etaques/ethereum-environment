@@ -40,7 +40,7 @@ services:
       --http-allow-origin "*"
       --metrics
       --execution-jwt /root/.jwt/jwtsecret
-      --execution-endpoint http://geth:8551 \
+      --execution-endpoint http://geth:8551
       --checkpoint-sync-url https://holesky.checkpoint.sigp.io
       --datadir /root/.lighthouse
     ports:
