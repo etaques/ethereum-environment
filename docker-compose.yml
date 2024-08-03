@@ -1,0 +1,72 @@
+version: '3.7'
+
+services:
+  ethereum-node:
+    image: ethereum/client-go:stable
+    container_name: ethereum-node
+    command: ["--syncmode", "fast", "--testnet", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.api", "eth,net,web3", "--metrics"]
+    ports:
+      - "8545:8545"
+      - "30303:30303"
+    volumes:
+      - ./ethereum/data:/root/.ethereum
+    networks:
+      - eth-net
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - eth-net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - grafana-data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - eth-net
+    depends_on:
+      - prometheus
+
+  loki:
+    image: grafana/loki:2.8.1
+    container_name: loki
+    volumes:
+      - ./loki/loki-config.yml:/etc/loki/local-config.yaml
+    ports:
+      - "3100:3100"
+    networks:
+      - eth-net
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    container_name: alertmanager
+    volumes:
+      - ./alertmanager/alertmanager.yml:/etc/alertmanager/config.yml
+    ports:
+      - "9093:9093"
+    networks:
+      - eth-net
+
+  promtail:
+    image: grafana/promtail:2.8.1
+    container_name: promtail
+    volumes:
+      - ./promtail/config.yml:/etc/promtail/config.yml
+      - /var/log:/var/log
+    networks:
+      - eth-net
+
+volumes:
+  grafana-data:
+
+networks:
+  eth-net:
