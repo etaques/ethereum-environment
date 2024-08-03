@@ -42,8 +42,8 @@ services:
       --datadir /root/.lighthouse
     ports:
       - "5052:5052"
-      - "9000:9000/tcp"
-      - "9000:9000/udp"
+      - "9007:9000/tcp"
+      - "9007:9000/udp"
       - "9001:9001/udp"
     volumes:
       - ./lighthouse/data:/root/.lighthouse
