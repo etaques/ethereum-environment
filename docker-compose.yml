@@ -3,7 +3,7 @@ version: '3.7'
 
 services:
   geth:
-    image: ethereum/client-go:stable
+    image: ethereum/client-go:v1.14.7
     container_name: geth
     command: >
       --http.addr=0.0.0.0
