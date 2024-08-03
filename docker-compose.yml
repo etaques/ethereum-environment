@@ -1,3 +1,4 @@
+# https://notes.ethereum.org/@launchpad/holesky#Lighthouse
 version: '3.7'
 
 services:
@@ -12,13 +13,15 @@ services:
       "--http.corsdomain", "*",
       "--holesky",
       "--syncmode=full",
-      "--metrics"
+      "--metrics",
+      "--authrpc.jwtsecret=/root/.jwt/jwtsecret"
     ]
     ports:
       - "8545:8545"
       - "30303:30303"
     volumes:
       - ./geth/data:/root/.ethereum
+      - ./geth/jwt:/root/.jwt
     networks:
       - eth-net
 
@@ -33,12 +36,14 @@ services:
       --http-address 0.0.0.0
       --http-allow-origin "*"
       --metrics
+      --jwt-secrets="/root/.jwt/jwtsecret
       --execution-endpoint http://geth:8545
       --datadir /root/.lighthouse
     ports:
       - "5052:5052"
     volumes:
       - ./lighthouse/data:/root/.lighthouse
+      - ./geth/jwt:/root/.jwt
     networks:
       - eth-net
     depends_on:
