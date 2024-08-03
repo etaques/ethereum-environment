@@ -25,17 +25,15 @@ services:
   lighthouse:
     image: sigp/lighthouse:latest
     container_name: lighthouse
-    command: [
-      "bn",
-      "--network=holesky",
-      "--http",
-      "--http-address", "0.0.0.0",
-      "--http-allow-origin", "*",
-      "--metrics",
-      "--http-allow-sync-stalled",
-      "--execution-endpoint", "http://geth:8545",
-      "--datadir", "/root/.lighthouse"
-    ]
+    command: >
+      beacon_node
+      --network holesky
+      --http
+      --http-address 0.0.0.0
+      --http-allow-origin "*"
+      --metrics
+      --execution-endpoint http://geth:8545
+      --datadir /root/.lighthouse
     ports:
       - "5052:5052"
     volumes:
