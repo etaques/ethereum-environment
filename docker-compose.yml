@@ -18,7 +18,7 @@ services:
       --ws.api=engine,eth,web3,txpool,net,debug
       --ws.origins='*'
       --holesky
-      --syncmode=light
+      --syncmode=snap
       --metrics
       --metrics.addr=0.0.0.0
       --metrics.port=8300
