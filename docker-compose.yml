@@ -3,16 +3,11 @@ version: '3.7'
 services:
   geth:
     image: ethereum/client-go:stable
-<<<<<<< HEAD
-    container_name: ethereum-node
-    command: ["--syncmode", "full", "--testnet", "--http", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http.api", "eth,net,web3", "--metrics"]
-=======
     container_name: geth
     command: [
       "--http", "--http.addr=0.0.0.0", "--http.port=8545", "--http.api=eth,net,web3",
       "--syncmode=full", "--metrics"
     ]
->>>>>>> 24a393dc5ae793be0ad75764dc2659fb0b421623
     ports:
       - "8545:8545"
       - "30303:30303"
