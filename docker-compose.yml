@@ -19,8 +19,6 @@ services:
       --authrpc.jwtsecret="/root/.jwt/jwtsecret"
     ports:
       - "8545:8545"
-      - "18550:18550"
-      - "8551:8551"
       - "30303:30303"
     volumes:
       - ./geth/data:/root/.ethereum
@@ -40,7 +38,7 @@ services:
       --http-allow-origin "*"
       --metrics
       --execution-jwt /root/.jwt/jwtsecret
-      --execution-endpoint http://geth:8551
+      --execution-endpoint http://geth:8545
       --checkpoint-sync-url https://holesky.checkpoint.sigp.io
       --datadir /root/.lighthouse
     ports:
