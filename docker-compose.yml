@@ -11,7 +11,7 @@ services:
       --http
       --http.api=engine,eth,web3,net,debug
       --ws
-      --ws.api=engine,eth,web3,net,debug
+      --ws.api=engine,eth,web3,txpool,net,debug
       --http.corsdomain "*"
       --holesky
       --syncmode=full
@@ -19,6 +19,8 @@ services:
       --authrpc.jwtsecret="/root/.jwt/jwtsecret"
     ports:
       - "8545:8545"
+      - "18550:18550"
+      - "8551:8551"
       - "30303:30303"
     volumes:
       - ./geth/data:/root/.ethereum
@@ -38,7 +40,9 @@ services:
       --http-allow-origin "*"
       --metrics
       --jwt-secrets="/root/.jwt/jwtsecret"
-      --execution-endpoint http://geth:8545
+      --eth1-endpoints http://geth:8545 \
+      --execution-endpoints http://geth:8551 \
+      --builder http://geth:18550 \
       --datadir /root/.lighthouse
     ports:
       - "5052:5052"
