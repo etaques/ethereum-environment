@@ -26,12 +26,12 @@ services:
     image: sigp/lighthouse:latest
     container_name: lighthouse
     command: [
-      "beacon_node",
       "--network", "holesky",
       "--http",
       "--http-address", "0.0.0.0",
       "--http-allow-origin", "*",
       "--metrics",
+      "--http-allow-sync-stalled",
       "--execution-endpoint", "http://geth:8545",
       "--datadir", "/root/.lighthouse"
     ]
