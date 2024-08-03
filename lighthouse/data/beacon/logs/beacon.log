@@ -1,8 +1,0 @@
-Aug 03 19:53:58.451 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
-Aug 03 19:53:58.548 INFO Lighthouse started, version: Lighthouse/v5.2.1-9e12c21, module: lighthouse:677
-Aug 03 19:53:58.548 INFO Configured for network, name: holesky, module: lighthouse:678
-Aug 03 19:53:58.549 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
-Aug 03 19:54:52.250 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
-Aug 03 19:54:52.255 INFO Lighthouse started, version: Lighthouse/v5.2.1-9e12c21, module: lighthouse:677
-Aug 03 19:54:52.255 INFO Configured for network, name: holesky, module: lighthouse:678
-Aug 03 19:54:52.255 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
