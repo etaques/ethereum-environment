@@ -5,7 +5,7 @@ services:
   geth:
     image: ethereum/client-go:v1.14.7
     container_name: geth
-    entrypoint: /bin/geth.sh
+    entrypoint: /root/bin/geth.sh
     ports:
       - "8545:8545"
       - "8546:8546"
@@ -16,47 +16,47 @@ services:
     volumes:
       - ./geth/data:/root/.ethereum
       - ./geth/holesky:/root/holesky
-      - ./geth/bin/:/bin/
+      - ./geth/bin/:/root/bin/
       - ./geth/jwt:/root/.jwt
     networks:
       - eth-net
 
-  lighthouse:
-    image: sigp/lighthouse:v5.2.0
-    container_name: lighthouse
-    entrypoint: "/usr/local/bin/lighthouse"
-    command: >
-      beacon
-      --holesky
-      --enr-udp-port=9005
-      --enr-tcp-port=9005
-      --discovery-port=9005
-      --http
-      --http-address 0.0.0.0
-      --http-port 5052
-      --http-allow-origin "*"
-      --metrics
-      --metrics-address 0.0.0.0
-      --metrics-port 5053
-      --execution-jwt /root/.jwt/jwtsecret
-      --execution-endpoint http://geth:8551
-      --datadir /root/.lighthouse
-      --disable-deposit-contract-sync
-      --disable-peer-scoring
-    ports:
-      - "5052:5052" # http rpc
-      - "5053:5053" # metrics
-      - "9005:9005/tcp"
-      - "9005:9005/udp"
-      - "9001:9001/udp"
-    volumes:
-      - ./lighthouse/data:/root/.lighthouse
-      - ./geth/holesky:/root/holesky:ro
-      - ./geth/jwt:/root/.jwt
+    container_name: lodestar
+    image: chainsafe/lodestar:latest
     networks:
       - eth-net
-    depends_on:
-      - geth
+    ports:
+      - 9002:9000/tcp # p2p
+      - 9002:9000/udp # p2p
+      - 5054:5054/tcp # metrics
+    expose:
+      - 4000
+    volumes:
+      - ./lodestar/data:/data
+      - ./geth/jwt:/root/.jwt
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=6144
+    command: |
+      beacon
+      --network=holesky
+      --dataDir=/data
+      --eth1=true
+      --execution.urls=http://geth:8551
+      --jwt-secret=/root/.jwt/jwtsecret
+      --logFile=/data/logs/beacon.log
+      --logFileLevel=info
+      --port=9000
+      --rest=true
+      --rest.address=0.0.0.0
+      --rest.port=4000
+      --rest.cors=*
+      --discv5=true
+      --targetPeers=50
+      --metrics=true
+      --metrics.port=5054
+      --checkpointSyncUrl=https://holesky.checkpoint.sigp.io
 
   prometheus:
     image: prom/prometheus:latest
