@@ -87,10 +87,11 @@ services:
       - prometheus
 
   loki:
-    image: grafana/loki:2.8.1
+    image: grafana/loki:2.9.2
     container_name: loki
+    command: -config.file=/loki/local-config.yaml
     volumes:
-      - ./loki/loki-config.yml:/etc/loki/local-config.yaml
+      - ./loki:/loki
     ports:
       - "3100:3100"
     networks:
@@ -100,17 +101,18 @@ services:
     image: prom/alertmanager:latest
     container_name: alertmanager
     volumes:
-      - ./alertmanager/alertmanager.yml:/etc/alertmanager/config.yml
+      - ./alertmanager:/alertmanager
     ports:
       - "9093:9093"
     networks:
       - eth-net
 
   promtail:
-    image: grafana/promtail:2.8.1
+    image: grafana/promtail:2.9.2
     container_name: promtail
+    command: -config.file=/promtail/config.yml
     volumes:
-      - ./promtail/config.yml:/etc/promtail/config.yml
+      - ./promtail:/promtail
       - /var/log:/var/log
     networks:
       - eth-net
