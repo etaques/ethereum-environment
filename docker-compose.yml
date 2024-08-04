@@ -35,6 +35,7 @@ services:
     volumes:
       - ./lodestar/data:/data
       - ./geth/jwt:/root/.jwt
+      - /var/log/ethereum-environment:/var/log
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -45,7 +46,7 @@ services:
       --dataDir=/data
       --execution.urls=http://geth:8551
       --jwt-secret=/root/.jwt/jwtsecret
-      --logFile=/data/logs/beacon.log
+      --logFile=/var/log/beacon.log
       --logFileLevel=info
       --port=9000
       --rest=true
@@ -113,7 +114,8 @@ services:
     command: -config.file=/promtail/config.yml
     volumes:
       - ./promtail:/promtail
-      - /var/log:/var/log
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - eth-net
 
