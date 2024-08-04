@@ -52,9 +52,9 @@ services:
     command: >
       beacon
       --network holesky
-      --enr-udp-port=9000
-      --enr-tcp-port=9000
-      --discovery-port=9000
+      --enr-udp-port=9005
+      --enr-tcp-port=9005
+      --discovery-port=9005
       --http
       --http-address 0.0.0.0
       --http-port 5052
@@ -70,8 +70,8 @@ services:
     ports:
       - "5052:5052" # http rpc
       - "5053:5053" # metrics
-      - "9000:9000/tcp"
-      - "9000:9000/udp"
+      - "9005:9005/tcp"
+      - "9005:9005/udp"
       - "9001:9001/udp"
     volumes:
       - ./lighthouse/data:/root/.lighthouse
