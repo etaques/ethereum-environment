@@ -92,6 +92,7 @@ services:
     command: -config.file=/loki/loki-config.yml
     volumes:
       - ./loki:/loki
+      - /tmp:/tmp
     ports:
       - "3100:3100"
     networks:
