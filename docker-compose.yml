@@ -64,7 +64,7 @@ services:
       --config.file=/prometheus/prometheus.yml
       --storage.tsdb.path=/prometheus/data
     volumes:
-      - ./prometheus/:/etc/prometheus/
+      - ./prometheus/:/prometheus/
     ports:
       - "9090:9090"
     networks:
