@@ -43,7 +43,7 @@ services:
       beacon
       --network=holesky
       --dataDir=/data
-      --execution.urls=http://geth:8545
+      --execution.urls=http://geth:8551
       --jwt-secret=/root/.jwt/jwtsecret
       --logFile=/data/logs/beacon.log
       --logFileLevel=info
