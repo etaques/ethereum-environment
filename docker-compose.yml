@@ -16,7 +16,7 @@ services:
     volumes:
       - ./geth/data:/root/.ethereum
       - ./geth/holesky:/root/holesky
-      - ./geth/bin/geth.sh:/bin/geth.sh
+      - ./geth/bin/:/bin/
       - ./geth/jwt:/root/.jwt
     networks:
       - eth-net
