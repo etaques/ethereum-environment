@@ -5,7 +5,7 @@ services:
   geth:
     image: ethereum/client-go:v1.14.7
     container_name: geth
-    command: /bin/geth.sh
+    entrypoint: /bin/geth.sh
     ports:
       - "8545:8545"
       - "8546:8546"
@@ -27,7 +27,7 @@ services:
     entrypoint: "/usr/local/bin/lighthouse"
     command: >
       beacon
-      --testnet-dir /root/holesky
+      --holesky
       --enr-udp-port=9005
       --enr-tcp-port=9005
       --discovery-port=9005
