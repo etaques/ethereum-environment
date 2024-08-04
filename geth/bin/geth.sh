@@ -2,11 +2,6 @@
 
 geth init  --datadir /root/.ethereum/ /root/holesky/genesis.json
 
-apk update && apk add jq
-
-bootnodes=$(cat /root/holesky/enodes.txt)
-network_id=$(jq -r '.config.chainId' /root/holesky/genesis.json)
-
 exec geth \
   --holesky \
   --port=30303 \
