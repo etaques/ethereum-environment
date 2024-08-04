@@ -21,6 +21,7 @@ services:
     networks:
       - eth-net
 
+  lodestar:
     container_name: lodestar
     image: chainsafe/lodestar:latest
     networks:
