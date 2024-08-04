@@ -89,7 +89,7 @@ services:
   loki:
     image: grafana/loki:2.9.2
     container_name: loki
-    command: -config.file=/loki/loki-config.yaml
+    command: -config.file=/loki/loki-config.yml
     volumes:
       - ./loki:/loki
     ports:
