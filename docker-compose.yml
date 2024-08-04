@@ -5,6 +5,9 @@ services:
   geth:
     image: ethereum/client-go:v1.14.7
     container_name: geth
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
     entrypoint: /root/bin/geth.sh
     ports:
       - "8545:8545"
@@ -24,6 +27,9 @@ services:
   lodestar:
     container_name: lodestar
     image: chainsafe/lodestar:latest
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
     networks:
       - eth-net
     ports:
