@@ -5,7 +5,7 @@ services:
   geth:
     image: ethereum/client-go:v1.14.7
     container_name: geth
-    command: /usr/local/bin/geth.sh
+    command: /geth.sh
     ports:
       - "8545:8545"
       - "8546:8546"
@@ -16,7 +16,7 @@ services:
     volumes:
       - ./geth/data:/root/.ethereum
       - ./geth/holesky:/root/holesky
-      - ./geth/geth.sh:/usr/local/bin/geth.sh
+      - ./geth/geth.sh:/geth.sh
       - ./geth/jwt:/root/.jwt
     networks:
       - eth-net
