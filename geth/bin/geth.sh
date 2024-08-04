@@ -8,7 +8,7 @@ bootnodes=$(cat /root/holesky/enodes.txt)
 network_id=$(jq -r '.config.chainId' /root/holesky/genesis.json)
 
 exec geth \
-  --mainnet \
+  --holesky \
   --port=30303 \
 #  --bootnodes "$bootnodes"
   --http.addr=0.0.0.0
