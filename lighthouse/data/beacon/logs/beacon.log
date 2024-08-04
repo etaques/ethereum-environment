@@ -41,3 +41,88 @@ Aug 04 00:15:17.521 INFO Downloading genesis state, info: this may take some tim
 Aug 04 00:18:17.543 CRIT Failed to start beacon node, reason: Unable to download a genesis state from 1 source(s): , kind: timeout, detail: operation timed out, module: lighthouse:697
 Aug 04 00:18:17.543 INFO Internal shutdown received, reason: Failed to start beacon node, module: environment:472
 Aug 04 00:18:17.543 INFO Shutting down.., reason: Failure("Failed to start beacon node"), module: lighthouse:752
+Aug 04 00:47:35.328 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
+Aug 04 00:47:35.333 INFO Lighthouse started, version: Lighthouse/v5.2.0-f1d88ba, module: lighthouse:677
+Aug 04 00:47:35.333 INFO Configured for network, name: holesky, module: lighthouse:678
+Aug 04 00:47:35.334 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
+Aug 04 00:47:35.339 INFO Deposit contract, address: 0x4242424242424242424242424242424242424242, deploy_block: 0, module: beacon_node::config:494
+Aug 04 00:47:35.359 INFO Blob DB initialized, oldest_blob_slot: Some(Slot(950272)), path: "/root/.lighthouse/beacon/blobs_db", service: freezer_db, module: store::hot_cold_store:297
+Aug 04 00:47:35.359 DEBG Attempting schema migration, to_version: 19, from_version: 19, service: freezer_db, module: store::hot_cold_store:308
+Aug 04 00:47:35.359 DEBG Loaded execution endpoint, jwt_path: "/root/.jwt/jwtsecret", endpoint: http://geth:8551/, service: exec, module: execution_layer:451
+Aug 04 00:47:35.371 INFO Starting from known genesis state, service: beacon, module: client::builder:288
+Aug 04 00:47:35.371 INFO Downloading genesis state, info: this may take some time on testnets with large validator counts, timeout: 180s, server: https://sigp-public-genesis-states.s3.ap-southeast-2.amazonaws.com/, service: beacon, module: eth2_network_config:401
+Aug 04 00:50:35.389 CRIT Failed to start beacon node, reason: Unable to download a genesis state from 1 source(s): , kind: timeout, detail: operation timed out, module: lighthouse:697
+Aug 04 00:50:35.389 INFO Internal shutdown received, reason: Failed to start beacon node, module: environment:472
+Aug 04 00:50:35.389 INFO Shutting down.., reason: Failure("Failed to start beacon node"), module: lighthouse:752
+Aug 04 01:02:55.182 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
+Aug 04 01:02:55.189 INFO Lighthouse started, version: Lighthouse/v5.2.0-f1d88ba, module: lighthouse:677
+Aug 04 01:02:55.189 INFO Configured for network, name: custom (/root/holesky), module: lighthouse:678
+Aug 04 01:02:55.190 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
+Aug 04 01:02:55.197 INFO Deposit contract, address: 0x4242424242424242424242424242424242424242, deploy_block: 0, module: beacon_node::config:494
+Aug 04 01:02:55.207 INFO Blob DB initialized, oldest_blob_slot: Some(Slot(950272)), path: "/root/.lighthouse/beacon/blobs_db", service: freezer_db, module: store::hot_cold_store:297
+Aug 04 01:02:55.207 DEBG Attempting schema migration, to_version: 19, from_version: 19, service: freezer_db, module: store::hot_cold_store:308
+Aug 04 01:02:55.207 DEBG Loaded execution endpoint, jwt_path: "/root/.jwt/jwtsecret", endpoint: http://geth:8551/, service: exec, module: execution_layer:451
+Aug 04 01:02:55.215 INFO Starting from known genesis state, service: beacon, module: client::builder:288
+Aug 04 01:02:55.215 CRIT Failed to start beacon node, reason: Built-in genesis state SSZ bytes are invalid: InvalidByteLength { len: 134, expected: 176 }, module: lighthouse:697
+Aug 04 01:02:55.215 INFO Internal shutdown received, reason: Failed to start beacon node, module: environment:472
+Aug 04 01:02:55.215 INFO Shutting down.., reason: Failure("Failed to start beacon node"), module: lighthouse:752
+Aug 04 01:04:05.343 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
+Aug 04 01:04:05.348 INFO Lighthouse started, version: Lighthouse/v5.2.0-f1d88ba, module: lighthouse:677
+Aug 04 01:04:05.348 INFO Configured for network, name: custom (/root/holesky), module: lighthouse:678
+Aug 04 01:04:05.348 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
+Aug 04 01:04:05.352 INFO Deposit contract, address: 0x4242424242424242424242424242424242424242, deploy_block: 0, module: beacon_node::config:494
+Aug 04 01:04:05.362 INFO Blob DB initialized, oldest_blob_slot: Some(Slot(950272)), path: "/root/.lighthouse/beacon/blobs_db", service: freezer_db, module: store::hot_cold_store:297
+Aug 04 01:04:05.362 DEBG Attempting schema migration, to_version: 19, from_version: 19, service: freezer_db, module: store::hot_cold_store:308
+Aug 04 01:04:05.362 DEBG Loaded execution endpoint, jwt_path: "/root/.jwt/jwtsecret", endpoint: http://geth:8551/, service: exec, module: execution_layer:451
+Aug 04 01:04:05.371 INFO Starting from known genesis state, service: beacon, module: client::builder:288
+Aug 04 01:04:05.372 CRIT Failed to start beacon node, reason: Built-in genesis state SSZ bytes are invalid: InvalidByteLength { len: 134, expected: 176 }, module: lighthouse:697
+Aug 04 01:04:05.372 INFO Internal shutdown received, reason: Failed to start beacon node, module: environment:472
+Aug 04 01:04:05.372 INFO Shutting down.., reason: Failure("Failed to start beacon node"), module: lighthouse:752
+Aug 04 01:06:09.245 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
+Aug 04 01:06:09.249 INFO Lighthouse started, version: Lighthouse/v5.2.0-f1d88ba, module: lighthouse:677
+Aug 04 01:06:09.249 INFO Configured for network, name: custom (/root/holesky), module: lighthouse:678
+Aug 04 01:06:09.249 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
+Aug 04 01:06:09.254 INFO Deposit contract, address: 0x4242424242424242424242424242424242424242, deploy_block: 0, module: beacon_node::config:494
+Aug 04 01:06:09.263 INFO Blob DB initialized, oldest_blob_slot: Some(Slot(950272)), path: "/root/.lighthouse/beacon/blobs_db", service: freezer_db, module: store::hot_cold_store:297
+Aug 04 01:06:09.263 DEBG Attempting schema migration, to_version: 19, from_version: 19, service: freezer_db, module: store::hot_cold_store:308
+Aug 04 01:06:09.263 DEBG Loaded execution endpoint, jwt_path: "/root/.jwt/jwtsecret", endpoint: http://geth:8551/, service: exec, module: execution_layer:451
+Aug 04 01:06:09.273 INFO Starting from known genesis state, service: beacon, module: client::builder:288
+Aug 04 01:06:09.273 CRIT Failed to start beacon node, reason: Built-in genesis state SSZ bytes are invalid: InvalidByteLength { len: 134, expected: 176 }, module: lighthouse:697
+Aug 04 01:06:09.273 INFO Internal shutdown received, reason: Failed to start beacon node, module: environment:472
+Aug 04 01:06:09.273 INFO Shutting down.., reason: Failure("Failed to start beacon node"), module: lighthouse:752
+Aug 04 01:11:07.991 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
+Aug 04 01:11:07.999 INFO Lighthouse started, version: Lighthouse/v5.2.0-f1d88ba, module: lighthouse:677
+Aug 04 01:11:07.999 INFO Configured for network, name: custom (/root/holesky), module: lighthouse:678
+Aug 04 01:11:07.999 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
+Aug 04 01:11:08.003 INFO Deposit contract, address: 0x4242424242424242424242424242424242424242, deploy_block: 0, module: beacon_node::config:494
+Aug 04 01:11:08.012 INFO Blob DB initialized, oldest_blob_slot: Some(Slot(950272)), path: "/root/.lighthouse/beacon/blobs_db", service: freezer_db, module: store::hot_cold_store:297
+Aug 04 01:11:08.012 DEBG Attempting schema migration, to_version: 19, from_version: 19, service: freezer_db, module: store::hot_cold_store:308
+Aug 04 01:11:08.012 DEBG Loaded execution endpoint, jwt_path: "/root/.jwt/jwtsecret", endpoint: http://geth:8551/, service: exec, module: execution_layer:451
+Aug 04 01:11:08.024 INFO Starting from known genesis state, service: beacon, module: client::builder:288
+Aug 04 01:11:08.025 CRIT Failed to start beacon node, reason: Built-in genesis state SSZ bytes are invalid: InvalidByteLength { len: 134, expected: 176 }, module: lighthouse:697
+Aug 04 01:11:08.025 INFO Internal shutdown received, reason: Failed to start beacon node, module: environment:472
+Aug 04 01:11:08.025 INFO Shutting down.., reason: Failure("Failed to start beacon node"), module: lighthouse:752
+Aug 04 01:12:06.984 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
+Aug 04 01:12:06.989 INFO Lighthouse started, version: Lighthouse/v5.2.0-f1d88ba, module: lighthouse:677
+Aug 04 01:12:06.989 INFO Configured for network, name: custom (/root/holesky), module: lighthouse:678
+Aug 04 01:12:06.989 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
+Aug 04 01:12:06.993 INFO Deposit contract, address: 0x4242424242424242424242424242424242424242, deploy_block: 0, module: beacon_node::config:494
+Aug 04 01:12:07.009 INFO Blob DB initialized, oldest_blob_slot: Some(Slot(950272)), path: "/root/.lighthouse/beacon/blobs_db", service: freezer_db, module: store::hot_cold_store:297
+Aug 04 01:12:07.009 DEBG Attempting schema migration, to_version: 19, from_version: 19, service: freezer_db, module: store::hot_cold_store:308
+Aug 04 01:12:07.010 DEBG Loaded execution endpoint, jwt_path: "/root/.jwt/jwtsecret", endpoint: http://geth:8551/, service: exec, module: execution_layer:451
+Aug 04 01:12:07.019 INFO Starting from known genesis state, service: beacon, module: client::builder:288
+Aug 04 01:12:07.019 CRIT Failed to start beacon node, reason: Built-in genesis state SSZ bytes are invalid: InvalidByteLength { len: 134, expected: 176 }, module: lighthouse:697
+Aug 04 01:12:07.019 INFO Internal shutdown received, reason: Failed to start beacon node, module: environment:472
+Aug 04 01:12:07.019 INFO Shutting down.., reason: Failure("Failed to start beacon node"), module: lighthouse:752
+Aug 04 01:14:00.848 INFO Logging to file, path: "/root/.lighthouse/beacon/logs/beacon.log", module: environment:313
+Aug 04 01:14:00.853 INFO Lighthouse started, version: Lighthouse/v5.2.0-f1d88ba, module: lighthouse:677
+Aug 04 01:14:00.853 INFO Configured for network, name: custom (/root/holesky), module: lighthouse:678
+Aug 04 01:14:00.853 INFO Data directory initialised, datadir: /root/.lighthouse, module: beacon_node::config:84
+Aug 04 01:14:00.858 INFO Deposit contract, address: 0x4242424242424242424242424242424242424242, deploy_block: 0, module: beacon_node::config:494
+Aug 04 01:14:00.872 INFO Blob DB initialized, oldest_blob_slot: Some(Slot(950272)), path: "/root/.lighthouse/beacon/blobs_db", service: freezer_db, module: store::hot_cold_store:297
+Aug 04 01:14:00.872 DEBG Attempting schema migration, to_version: 19, from_version: 19, service: freezer_db, module: store::hot_cold_store:308
+Aug 04 01:14:00.872 DEBG Loaded execution endpoint, jwt_path: "/root/.jwt/jwtsecret", endpoint: http://geth:8551/, service: exec, module: execution_layer:451
+Aug 04 01:14:00.882 INFO Starting from known genesis state, service: beacon, module: client::builder:288
+Aug 04 01:14:00.883 CRIT Failed to start beacon node, reason: Built-in genesis state SSZ bytes are invalid: InvalidByteLength { len: 134, expected: 176 }, module: lighthouse:697
+Aug 04 01:14:00.883 INFO Internal shutdown received, reason: Failed to start beacon node, module: environment:472
+Aug 04 01:14:00.883 INFO Shutting down.., reason: Failure("Failed to start beacon node"), module: lighthouse:752
