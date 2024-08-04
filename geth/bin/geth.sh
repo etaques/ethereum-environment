@@ -16,7 +16,7 @@ exec geth \
   --ws.port=8546 \
   --ws.api=engine,eth,web3,txpool,net,debug \
   --ws.origins='*' \
-  --syncmode=full \
+  --syncmode=snap \
   --metrics \
   --metrics.addr=0.0.0.0 \
   --metrics.port=8300 \
