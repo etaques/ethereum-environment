@@ -56,7 +56,6 @@ services:
       --targetPeers=50
       --metrics=true
       --metrics.port=5054
-      --checkpointSyncUrl=https://beaconstate-holesky.chainsafe.io
 
   prometheus:
     image: prom/prometheus:latest
