@@ -41,6 +41,7 @@ services:
       - "8300:8300"
     volumes:
       - ./geth/data:/root/.ethereum
+      - ./geth/holesky:/root/holesky
       - ./geth/jwt:/root/.jwt
     networks:
       - eth-net
@@ -75,6 +76,7 @@ services:
       - "9001:9001/udp"
     volumes:
       - ./lighthouse/data:/root/.lighthouse
+      - ./geth/holesky:/root/holesky:ro
       - ./geth/jwt:/root/.jwt
     networks:
       - eth-net
