@@ -26,6 +26,7 @@ exec geth \
   --metrics.addr=0.0.0.0 \
   --metrics.port=8300 \
   --authrpc.addr=0.0.0.0 \
+  --authrpc.corsdomain="*" \
   --authrpc.port=8551 \
   --authrpc.vhosts="*" \
   --authrpc.jwtsecret="/root/.jwt/jwtsecret" \
