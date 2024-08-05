@@ -1,6 +1,18 @@
+global:
+  resolve_timeout: 5m
+
 route:
-  receiver: 'default'
+  receiver: 'default-receiver'
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+
 receivers:
-  - name: 'default'
+  - name: 'default-receiver'
     email_configs:
       - to: 'your-email@example.com'
+        from: 'alertmanager@example.com'
+        smarthost: 'smtp.example.com:587'
+        auth_username: 'username'
+        auth_password: 'password'
+        auth_identity: 'identity'
