@@ -8,4 +8,14 @@ groups:
           severity: critical
         annotations:
           summary: "Geth server down"
-          description: "The Geth server is down for more than 5 minutes."
+          description: "The Geth server is down for more than 1 minutes."
+  - name: lodestar_alerts
+    rules:
+      - alert: LodestarDown
+        expr: up{job="beacon"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Lodestar server down"
+          description: "The Lodestar server is down for more than 1 minutes."
