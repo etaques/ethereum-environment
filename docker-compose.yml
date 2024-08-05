@@ -26,7 +26,7 @@ services:
 
   lodestar:
     container_name: lodestar
-    image: chainsafe/lodestar:latest
+    image: chainsafe/lodestar:v1.20.2
     labels:
       logging: "promtail"
       logging_jobname: "containerlogs"
@@ -45,7 +45,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     environment:
-      - NODE_OPTIONS=--max-old-space-size=6144
+      - NODE_OPTIONS= --max-old-space-size=8192
     command: |
       beacon
       --network=holesky
@@ -80,7 +80,7 @@ services:
 
   grafana:
     container_name: grafana
-    image: grafana/grafana:latest
+    image: grafana/grafana:10.0.0
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=strongpass
       - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
