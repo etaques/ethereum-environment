@@ -14,3 +14,9 @@ datasources:
     version: 1
     editable: false
     isDefault: false
+  - name: Alertmanager
+    type: alertmanager
+    url: http://alertmanager:9093
+    access: proxy
+    jsonData:
+      manage_alerts: true
