@@ -19,4 +19,5 @@ datasources:
     url: http://alertmanager:9093
     access: proxy
     jsonData:
+      implementation: prometheus
       manage_alerts: true
