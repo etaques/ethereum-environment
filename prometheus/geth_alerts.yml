@@ -1,0 +1,11 @@
+groups:
+  - name: geth_alerts
+    rules:
+      - alert: GethDown
+        expr: up{job="ethereum-node"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Geth server down"
+          description: "The Geth server is down for more than 5 minutes."
