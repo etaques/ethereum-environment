@@ -105,16 +105,6 @@ services:
     networks:
       - eth-net
 
-  alertmanager:
-    container_name: alertmanager
-    image: prom/alertmanager:latest
-    volumes:
-      - ./alertmanager:/alertmanager
-    ports:
-      - "9093:9093"
-    networks:
-      - eth-net
-
   promtail:
     container_name: promtail
     image: grafana/promtail:2.9.2
@@ -125,6 +115,25 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - eth-net
+
+  alertmanager:
+    container_name: alertmanager
+    image: prom/alertmanager:latest
+    volumes:
+      - ./alertmanager:/alertmanager
+    ports:
+      - "9093:9093"
+    networks:
+      - eth-net
+
+  mailhog:
+    container_name: mailhog
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"  # SMTP server
+      - "8025:8025"  # Web UI
+    networks:
+      - eth-net   
 
 volumes:
   grafana-data:
