@@ -22,6 +22,9 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
   - `./geth/jwt:/root/.jwt`: Stores JWT tokens for authentication.
 - **Network**: Connected to `eth-net` for internal communication with other services.
 
+![image](https://github.com/user-attachments/assets/efbabd79-7ee9-4e5e-9ee4-9dea97216e8f)
+
+
 ### 2. **lodestar**
 
 - **Purpose**: Lodestar is an Ethereum consensus client. It implements the Ethereum Beacon Chain specification and is used for staking and validating transactions on Ethereum's proof-of-stake network.
@@ -37,6 +40,9 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
 - **Environment Variables**: `NODE_OPTIONS= --max-old-space-size=8192` to allocate memory for the Node.js runtime.
 - **Command**: Configures the Lodestar beacon node with various options like network, data directory, JWT secret, logging, REST API, metrics, and checkpoint synchronization.
 - **Network**: Part of the `eth-net` network.
+
+![image](https://github.com/user-attachments/assets/3f37b0bb-ce10-43f9-ac3a-92240b5e6b5d)
+
 
 ### 3. **prometheus**
 
@@ -63,6 +69,15 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
 - **Network**: Part of `eth-net`.
 - **Depends On**: Prometheus, ensuring that Grafana starts after Prometheus.
 
+loki logs:
+![image](https://github.com/user-attachments/assets/34eaf3d8-4e0d-41e7-8b78-c66e9f7daa81)
+
+
+lodestart dashboard:
+![image](https://github.com/user-attachments/assets/e5f39624-d844-4cf5-b4fc-967f3e1bd67c)
+
+
+
 ### 5. **loki**
 
 - **Purpose**: Loki is a log aggregation system designed to work with Prometheus. It stores and queries logs, helping to correlate them with metrics.
@@ -72,6 +87,9 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
   - `./loki:/loki`: Configuration and data storage for Loki.
 - **Ports**: `3100` for the Loki API.
 - **Network**: Part of `eth-net`.
+
+![image](https://github.com/user-attachments/assets/d113bce5-f485-48a8-9d00-ebad4228be78)
+
 
 ### 6. **promtail**
 
@@ -84,6 +102,9 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
   - `/var/run/docker.sock:/var/run/docker.sock`: Access to Docker daemon for container discovery.
 - **Network**: Part of `eth-net`.
 
+![image](https://github.com/user-attachments/assets/e2ade0be-5f50-4591-857d-8c12a40265e0)
+
+
 ### 7. **alertmanager**
 
 - **Purpose**: Alertmanager handles alerts sent by Prometheus. It manages alerts, routes them to appropriate receivers, and deduplicates them.
@@ -94,6 +115,9 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
 - **Ports**: `9093` for accessing the Alertmanager web UI and API.
 - **Network**: Part of `eth-net`.
 
+![image](https://github.com/user-attachments/assets/9786c8f3-e6db-4998-93e0-024a6be3058a)
+
+
 ### 8. **mailhog**
 
 - **Purpose**: Mailhog is an email testing tool. It captures outgoing emails for inspection, useful in testing and development environments.
@@ -102,6 +126,9 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
   - `1025` for SMTP server, which captures outgoing emails.
   - `8025` for Mailhog's web UI to view captured emails.
 - **Network**: Part of `eth-net`.
+
+![image](https://github.com/user-attachments/assets/a67f08f8-74c6-488d-a41b-5b3f1a286780)
+
 
 ### Volumes
 
@@ -112,6 +139,11 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
 - **eth-net**: A custom network defined for this Docker Compose setup, enabling inter-container communication. This isolates the services from the host and other containers unless explicitly exposed.
 
 ---
+
+## Portainer Overview:
+
+![image](https://github.com/user-attachments/assets/18bf8237-e1b8-4702-adf3-ac74a9703c99)
+
 
 ## To run the project, follow these steps:
 
