@@ -135,7 +135,7 @@ docker-compose up -d
 ```
 The -d flag runs the containers in detached mode, meaning they will run in the background.
 
-Check the Status of Services: You can check the status of your running containers with:
+<b>Check the Status of Services:</b> You can check the status of your running containers with:
 
 ```
 docker-compose ps
