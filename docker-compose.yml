@@ -7,7 +7,7 @@ services:
     image: ethereum/client-go:v1.14.7
     labels:
       logging: "promtail"
-      logging_jobname: "containerlogs"
+      logging_jobname: "ethereum-node"
     entrypoint: /root/bin/geth.sh
     ports:
       - "8545:8545"
@@ -29,7 +29,7 @@ services:
     image: chainsafe/lodestar:v1.20.2
     labels:
       logging: "promtail"
-      logging_jobname: "containerlogs"
+      logging_jobname: "beacon"
     networks:
       - eth-net
     ports:
