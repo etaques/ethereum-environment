@@ -111,6 +111,8 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
 
 - **eth-net**: A custom network defined for this Docker Compose setup, enabling inter-container communication. This isolates the services from the host and other containers unless explicitly exposed.
 
+---
+
 ## To run the project, follow these steps:
 
 <b>Clone the Repository:</b> First, make sure you have the necessary files and directories. Clone the repository or copy the project files to your local machine.
@@ -142,13 +144,13 @@ This command will list all the running services and their statuses.
 
 <b>Access the Services:</b>
 
-    Geth: You can interact with the Ethereum node via HTTP-RPC on http://localhost:8545 or WebSocket-RPC on ws://localhost:8546.
-    Lodestar: Access the Lodestar REST API on http://localhost:4000.
-    Prometheus: Access the Prometheus UI at http://localhost:9090.
-    Grafana: Access the Grafana dashboard at http://localhost:3000. The default username is admin, and the password is set by the environment variable GF_SECURITY_ADMIN_PASSWORD.
-    Loki: Loki's API is available at http://localhost:3100.
-    Alertmanager: Access Alertmanager at http://localhost:9093.
-    Mailhog: View captured emails at http://localhost:8025.
+- Geth: You can interact with the Ethereum node via HTTP-RPC on http://localhost:8545 or WebSocket-RPC on ws://localhost:8546.
+- Lodestar: Access the Lodestar REST API on http://localhost:4000.
+- Prometheus: Access the Prometheus UI at http://localhost:9090.
+- Grafana: Access the Grafana dashboard at http://localhost:3000. The default username is admin, and the password is set by the environment variable GF_SECURITY_ADMIN_PASSWORD.
+- Loki: Loki's API is available at http://localhost:3100.
+- Alertmanager: Access Alertmanager at http://localhost:9093.
+- Mailhog: View captured emails at http://localhost:8025.
 
 <b>Logs and Monitoring:</b> Logs from the services can be viewed using the Promtail and Loki setup. Grafana dashboards can be used to monitor metrics and system performance.
 
@@ -158,5 +160,3 @@ Stopping the Services: When you're done, you can stop the services with:
 docker-compose down
 ```
 This will stop and remove the containers, but your data will be preserved in the mounted volumes.
-
-By following these steps, you can set up and run the Ethereum node environment along with the necessary monitoring and logging infrastructure.
