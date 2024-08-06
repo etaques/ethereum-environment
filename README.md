@@ -69,7 +69,7 @@ This setup provides a comprehensive environment for running an Ethereum node (`g
 - **Network**: Part of `eth-net`.
 - **Depends On**: Prometheus, ensuring that Grafana starts after Prometheus.
 
-loki logs:
+Geth dasboard:
 ![image](https://github.com/user-attachments/assets/34eaf3d8-4e0d-41e7-8b78-c66e9f7daa81)
 
 
